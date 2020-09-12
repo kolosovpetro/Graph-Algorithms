@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.DijkstraAlg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.DijkstraAlgorithm.Tests", "GraphAlgorithms.DijkstraAlgorithm.Tests\GraphAlgorithms.DijkstraAlgorithm.Tests.csproj", "{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm", "GraphAlgorithms.KahnAlgorithm\GraphAlgorithms.KahnAlgorithm.csproj", "{B11381CB-1FC8-4CD1-9960-626ED8C378CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm.Test", "GraphAlgorithms.KahnAlgorithm.Test\GraphAlgorithms.KahnAlgorithm.Test.csproj", "{04A1CFC8-76EB-4228-9773-DE32996FD9BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
