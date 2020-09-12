@@ -8,20 +8,13 @@ namespace GraphAlgorithms.DijkstraAlgorithm.Implementation
 {
     public static class DijkstraAlgorithm<T>
     {
-        public static List<DistanceModel<T>> DijkstraMethod(IGraph<T> graph, IVertex<T> startVertex)
+        public static List<DistanceModel<T>> DijkstraMethod(IGraph<T> graph, IVertex<T> start)
         {
-            if (!graph.ContainsVertex(startVertex))
+            if (!graph.ContainsVertex(start))
                 throw new InvalidOperationException("Vertex does not belong to graph");
-            
-            graph.Reset();
 
-            var distances = new List<DistanceModel<T>>
-            {
-                new DistanceModel<T>(startVertex, startVertex, 0)
-            };
-
-            var currentVertex = startVertex;
-
+            var list = new List<DistanceModel<T>> {new DistanceModel<T>(start, start, 0)};
+            var currentVertex = start;
             var iterator = 0;
 
             while (graph.UnvisitedVertices().Any())
@@ -33,23 +26,21 @@ namespace GraphAlgorithms.DijkstraAlgorithm.Implementation
 
                 foreach (var edge in edgesToAdjacentUnvisitedVertices)
                 {
-                    if (ContainsAndGreater(distances, edge.EndVertex, iterator + edge.Weight))
+                    if (ContainsAndGreater(list, edge.EndVertex, iterator + edge.Weight))
                     {
-                        var distanceModel = GetDistanceModelByEndVertex(distances, edge.EndVertex);
-                        distanceModel.Distance = iterator + edge.Weight;
-                        distanceModel.PreviousVertex = currentVertex;
+                        var distance = GetDistanceModelByEndVertex(list, edge.EndVertex);
+                        distance.Distance = iterator + edge.Weight;
+                        distance.PreviousVertex = currentVertex;
                         continue;
                     }
 
-                    if (!Contains(distances, edge.EndVertex))
-                    {
-                        distances.Add(new DistanceModel<T>
+                    if (!Contains(list, edge.EndVertex))
+                        list.Add(new DistanceModel<T>
                         {
                             Vertex = edge.EndVertex,
                             PreviousVertex = currentVertex,
                             Distance = iterator + edge.Weight,
                         });
-                    }
                 }
 
                 if (!edgesToAdjacentUnvisitedVertices.Any()) break;
@@ -59,7 +50,7 @@ namespace GraphAlgorithms.DijkstraAlgorithm.Implementation
                 currentVertex = minEdge.EndVertex;
             }
 
-            return distances;
+            return list;
         }
 
         private static IEdge<T> GetMinEdge(List<IEdge<T>> edges)
@@ -68,21 +59,14 @@ namespace GraphAlgorithms.DijkstraAlgorithm.Implementation
             return edges.First(x => x.Weight == minWeight);
         }
 
-        private static DistanceModel<T> GetDistanceModelByEndVertex(List<DistanceModel<T>> distances,
+        private static DistanceModel<T> GetDistanceModelByEndVertex(IEnumerable<DistanceModel<T>> distances,
             IVertex<T> endVertex)
-        {
-            var distanceModel = distances.First(x => x.Vertex.Equals(endVertex));
-            return distanceModel;
-        }
+            => distances.First(x => x.Vertex.Equals(endVertex));
 
         private static bool ContainsAndGreater(List<DistanceModel<T>> distances, IVertex<T> vertex, int value)
-        {
-            return distances.Any(x => x.Vertex.Equals(vertex) && x.Distance > value);
-        }
+            => distances.Any(x => x.Vertex.Equals(vertex) && x.Distance > value);
 
         private static bool Contains(List<DistanceModel<T>> distances, IVertex<T> vertex)
-        {
-            return distances.Any(x => x.Vertex.Equals(vertex));
-        }
+            => distances.Any(x => x.Vertex.Equals(vertex));
     }
 }

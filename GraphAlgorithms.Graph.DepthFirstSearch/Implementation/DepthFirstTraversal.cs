@@ -15,12 +15,11 @@ namespace GraphAlgorithms.Graph.DepthFirstSearch.Implementation
             if (!graph.ContainsVertex(startVertex))
                 throw new InvalidOperationException("Vertex does not belong to graph.");
 
-            if (startVertex.IsVisited)
-                return;
-
+            if (startVertex.IsVisited) return;
+            
             startVertex.Visit();
             Console.WriteLine(startVertex);
-
+            
             var unvisitedVertices = startVertex.AdjacentUnvisitedVertices();
             foreach (var vertex in unvisitedVertices) 
                 DepthFirstSearchIterative(graph, vertex);
@@ -42,14 +41,10 @@ namespace GraphAlgorithms.Graph.DepthFirstSearch.Implementation
             while (stack.Any())
             {
                 var vertex = stack.Pop();
-                if (vertex.Equals(searchVertex))
-                {
-                    yield return vertex;
-                    yield break;
-                }
-
                 vertex.Visit();
                 yield return vertex;
+                if (vertex.Equals(searchVertex))
+                    yield break;
                 var unvisitedVertices = vertex.AdjacentUnvisitedVertices();
                 foreach (var v in unvisitedVertices)
                     stack.Push(v);

@@ -18,10 +18,10 @@ namespace GraphAlgorithms.DijkstraAlgorithm.Models
         public DistanceModel()
         {
         }
+        
+        
 
-        public override string ToString()
-        {
-            return $"Vertex: {Vertex} - Distance: {Distance} - Previous: {PreviousVertex}";
-        }
+        public override string ToString() => 
+            $"Vertex: {Vertex} - Distance: {Distance} - Previous: {PreviousVertex}";
     }
 }

@@ -39,7 +39,7 @@ namespace GraphAlgorithms.Graph.BreadthFirstSearch.UI
             Console.WriteLine("Breadth-First iterative between two vertices: ");
             
             var breadthFirstIterative = BreadthFirstTraversal<char>
-                .BreadthFirstIterative(graph, a, c);
+                .BreadthFirstSearchIterative(graph, a, c);
 
             foreach (var vertex in breadthFirstIterative)
             {
