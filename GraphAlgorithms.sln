@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.Depth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.DepthFirstSearch.UI", "GraphAlgorithms.Graph.DepthFirstSearch.UI\GraphAlgorithms.Graph.DepthFirstSearch.UI.csproj", "{C65C5859-AE37-4C92-B60D-E08C35EE5F08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm.UI", "GraphAlgorithms.KahnAlgorithm.UI\GraphAlgorithms.KahnAlgorithm.UI.csproj", "{2B3C73DC-B07C-4CFD-9250-31F662208442}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,5 +92,9 @@ Global
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3C73DC-B07C-4CFD-9250-31F662208442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3C73DC-B07C-4CFD-9250-31F662208442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3C73DC-B07C-4CFD-9250-31F662208442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3C73DC-B07C-4CFD-9250-31F662208442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

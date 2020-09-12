@@ -39,7 +39,9 @@ namespace GraphAlgorithms.Graph.DepthFirstSearch.UI
             
             Console.WriteLine("Depth-First recursive traversal: ");
             DepthFirstTraversal<char>.DepthFirstSearchIterative(graph, a);
-
+            
+            graph.Reset();
+            
             Console.WriteLine("Depth-First iterative path between two vertices: ");
             var depthFirstIterative = DepthFirstTraversal<char>
                 .DepthFirstIterative(graph, a, e);

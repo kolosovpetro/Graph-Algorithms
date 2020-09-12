@@ -29,16 +29,13 @@ namespace GraphAlgorithms.Graph.DepthFirstSearch.Implementation
         /// <summary>
         /// Returns the list of vertices, which are path from start vertex to end vertex
         /// </summary>
-        public static List<IVertex<T>> DepthFirstIterative(IGraph<T> graph, IVertex<T> startVertex,
+        public static IEnumerable<IVertex<T>> DepthFirstIterative(IGraph<T> graph, IVertex<T> startVertex,
             IVertex<T> searchVertex)
         {
             if (!graph.ContainsVertex(startVertex) || !graph.ContainsVertex(searchVertex))
                 throw new InvalidOperationException("One or more vertices are not belong to graph.");
-            
-            graph.Reset();
 
             var stack = new Stack<IVertex<T>>();
-            var list = new List<IVertex<T>>();
 
             stack.Push(startVertex);
 
@@ -47,18 +44,16 @@ namespace GraphAlgorithms.Graph.DepthFirstSearch.Implementation
                 var vertex = stack.Pop();
                 if (vertex.Equals(searchVertex))
                 {
-                    list.Add(vertex);
-                    return list;
+                    yield return vertex;
+                    yield break;
                 }
 
                 vertex.Visit();
-                list.Add(vertex);
+                yield return vertex;
                 var unvisitedVertices = vertex.AdjacentUnvisitedVertices();
                 foreach (var v in unvisitedVertices)
                     stack.Push(v);
             }
-
-            return list;
         }
     }
 }
