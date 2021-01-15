@@ -19,4 +19,8 @@
       <ProjectReference Include="..\Graphs.DijkstraAlgorithm\Graphs.DijkstraAlgorithm.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Tests" />
+    </ItemGroup>
+
 </Project>

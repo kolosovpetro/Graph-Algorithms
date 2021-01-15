@@ -4,7 +4,7 @@ using GraphAlgorithms.Graph.Implementations;
 using GraphAlgorithms.Graph.Interfaces;
 using NUnit.Framework;
 
-namespace Graphs.DijkstraAlgorithm.Tests.Tests
+namespace GraphAlgorithms.Graph.Tests.AlgorithmsTests
 {
     [TestFixture]
     public class DijkstraTests

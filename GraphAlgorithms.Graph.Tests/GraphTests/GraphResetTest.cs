@@ -3,7 +3,7 @@ using GraphAlgorithms.Graph.Implementations;
 using GraphAlgorithms.Graph.Interfaces;
 using NUnit.Framework;
 
-namespace GraphAlgorithms.Graph.Tests.Tests
+namespace GraphAlgorithms.Graph.Tests.GraphTests
 {
     [TestFixture]
     public class GraphResetTest

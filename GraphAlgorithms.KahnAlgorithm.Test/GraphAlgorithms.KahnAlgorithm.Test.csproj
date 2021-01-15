@@ -17,4 +17,8 @@
       <ProjectReference Include="..\GraphAlgorithms.KahnAlgorithm\GraphAlgorithms.KahnAlgorithm.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Tests" />
+    </ItemGroup>
+
 </Project>
