@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\GraphAlgorithms.Graph\GraphAlgorithms.Graph.csproj" />
-      <ProjectReference Include="..\Graphs.DijkstraAlgorithm\Graphs.DijkstraAlgorithm.csproj" />
     </ItemGroup>
 
 </Project>

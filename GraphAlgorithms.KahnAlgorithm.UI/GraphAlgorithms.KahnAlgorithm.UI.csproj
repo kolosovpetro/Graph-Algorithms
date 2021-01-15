@@ -7,7 +7,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\GraphAlgorithms.Graph\GraphAlgorithms.Graph.csproj" />
-      <ProjectReference Include="..\GraphAlgorithms.KahnAlgorithm\GraphAlgorithms.KahnAlgorithm.csproj" />
     </ItemGroup>
 
 </Project>

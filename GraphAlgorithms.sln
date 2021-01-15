@@ -4,11 +4,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph", "Gr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.Tests", "GraphAlgorithms.Graph.Tests\GraphAlgorithms.Graph.Tests.csproj", "{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs.DijkstraAlgorithm.UI", "Graphs.DijkstraAlgorithm.UI\Graphs.DijkstraAlgorithm.UI.csproj", "{3728AC41-0680-4E53-A940-031661CDFE79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Dijkstra.UI", "GraphAlgorithms.Dijkstra.UI\GraphAlgorithms.Dijkstra.UI.csproj", "{3728AC41-0680-4E53-A940-031661CDFE79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.BreadthFirstSearch.UI", "GraphAlgorithms.Graph.BreadthFirstSearch.UI\GraphAlgorithms.Graph.BreadthFirstSearch.UI.csproj", "{782EA930-BBCE-41C5-BFC7-19260A914239}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.BFS", "GraphAlgorithms.Graph.BFS\GraphAlgorithms.Graph.BFS.csproj", "{782EA930-BBCE-41C5-BFC7-19260A914239}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.DepthFirstSearch.UI", "GraphAlgorithms.Graph.DepthFirstSearch.UI\GraphAlgorithms.Graph.DepthFirstSearch.UI.csproj", "{C65C5859-AE37-4C92-B60D-E08C35EE5F08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.DFS", "GraphAlgorithms.Graph.DFS\GraphAlgorithms.Graph.DFS.csproj", "{C65C5859-AE37-4C92-B60D-E08C35EE5F08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm.UI", "GraphAlgorithms.KahnAlgorithm.UI\GraphAlgorithms.KahnAlgorithm.UI.csproj", "{2B3C73DC-B07C-4CFD-9250-31F662208442}"
 EndProject

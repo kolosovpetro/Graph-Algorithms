@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>Graphs.DijkstraAlgorithm</RootNamespace>
+        <RootNamespace>GraphAlgorithms.Graph.BFS</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\GraphAlgorithms.Graph\GraphAlgorithms.Graph.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Implementation" />
     </ItemGroup>
 
 </Project>
