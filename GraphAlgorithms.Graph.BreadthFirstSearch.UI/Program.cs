@@ -1,7 +1,7 @@
 ﻿using System;
-using GraphAlgorithms.Graph.BreadthFirstSearch.Implementation;
 using GraphAlgorithms.Graph.Implementations;
 using GraphAlgorithms.Graph.Interfaces;
+using GraphAlgorithms.Graph.Traversal;
 
 namespace GraphAlgorithms.Graph.BreadthFirstSearch.UI
 {

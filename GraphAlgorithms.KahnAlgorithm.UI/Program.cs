@@ -1,7 +1,7 @@
 ﻿using System;
+using GraphAlgorithms.Graph.Algorithms;
 using GraphAlgorithms.Graph.Implementations;
 using GraphAlgorithms.Graph.Interfaces;
-using GraphAlgorithms.KahnAlgorithm.Implementation;
 
 namespace GraphAlgorithms.KahnAlgorithm.UI
 {

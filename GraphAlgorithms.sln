@@ -1,30 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms", "GraphAlgorithms\GraphAlgorithms.csproj", "{FB9156A9-701F-416C-8C1C-E9BF35C32B62}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph", "GraphAlgorithms.Graph\GraphAlgorithms.Graph.csproj", "{03812AEF-DD09-4553-87BC-D2241BFBE954}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.GraphByAdjacencyMatrix", "GraphAlgorithms.GraphByAdjacencyMatrix\GraphAlgorithms.GraphByAdjacencyMatrix.csproj", "{B0D9256E-54E1-46A8-B14E-C4CDDF0A73F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.GraphByAdjacencyList", "GraphAlgorithms.GraphByAdjacencyList\GraphAlgorithms.GraphByAdjacencyList.csproj", "{45133570-72FE-4032-8BD2-24D7EC266DED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.Tests", "GraphAlgorithms.Graph.Tests\GraphAlgorithms.Graph.Tests.csproj", "{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.DijkstraAlgorithm", "GraphAlgorithms.DijkstraAlgorithm\GraphAlgorithms.DijkstraAlgorithm.csproj", "{DB2182D9-16F8-4229-8D6F-56CB8583DBEA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.DijkstraAlgorithm.Tests", "GraphAlgorithms.DijkstraAlgorithm.Tests\GraphAlgorithms.DijkstraAlgorithm.Tests.csproj", "{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm", "GraphAlgorithms.KahnAlgorithm\GraphAlgorithms.KahnAlgorithm.csproj", "{B11381CB-1FC8-4CD1-9960-626ED8C378CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs.DijkstraAlgorithm.Tests", "Graphs.DijkstraAlgorithm.Tests\Graphs.DijkstraAlgorithm.Tests.csproj", "{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.KahnAlgorithm.Test", "GraphAlgorithms.KahnAlgorithm.Test\GraphAlgorithms.KahnAlgorithm.Test.csproj", "{04A1CFC8-76EB-4228-9773-DE32996FD9BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.BreadthFirstSearch", "GraphAlgorithms.Graph.BreadthFirstSearch\GraphAlgorithms.Graph.BreadthFirstSearch.csproj", "{E8AF35DE-95B6-4F42-8225-D18EFEB26D46}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.DijkstraAlgorithm.UI", "GraphAlgorithms.DijkstraAlgorithm.UI\GraphAlgorithms.DijkstraAlgorithm.UI.csproj", "{3728AC41-0680-4E53-A940-031661CDFE79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs.DijkstraAlgorithm.UI", "Graphs.DijkstraAlgorithm.UI\Graphs.DijkstraAlgorithm.UI.csproj", "{3728AC41-0680-4E53-A940-031661CDFE79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.BreadthFirstSearch.UI", "GraphAlgorithms.Graph.BreadthFirstSearch.UI\GraphAlgorithms.Graph.BreadthFirstSearch.UI.csproj", "{782EA930-BBCE-41C5-BFC7-19260A914239}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.DepthFirstSearch", "GraphAlgorithms.Graph.DepthFirstSearch\GraphAlgorithms.Graph.DepthFirstSearch.csproj", "{5800734D-710B-47D7-9E10-8B52759394E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithms.Graph.DepthFirstSearch.UI", "GraphAlgorithms.Graph.DepthFirstSearch.UI\GraphAlgorithms.Graph.DepthFirstSearch.UI.csproj", "{C65C5859-AE37-4C92-B60D-E08C35EE5F08}"
 EndProject
@@ -36,46 +22,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB9156A9-701F-416C-8C1C-E9BF35C32B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB9156A9-701F-416C-8C1C-E9BF35C32B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB9156A9-701F-416C-8C1C-E9BF35C32B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB9156A9-701F-416C-8C1C-E9BF35C32B62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03812AEF-DD09-4553-87BC-D2241BFBE954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03812AEF-DD09-4553-87BC-D2241BFBE954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03812AEF-DD09-4553-87BC-D2241BFBE954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03812AEF-DD09-4553-87BC-D2241BFBE954}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0D9256E-54E1-46A8-B14E-C4CDDF0A73F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0D9256E-54E1-46A8-B14E-C4CDDF0A73F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0D9256E-54E1-46A8-B14E-C4CDDF0A73F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0D9256E-54E1-46A8-B14E-C4CDDF0A73F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45133570-72FE-4032-8BD2-24D7EC266DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45133570-72FE-4032-8BD2-24D7EC266DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45133570-72FE-4032-8BD2-24D7EC266DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45133570-72FE-4032-8BD2-24D7EC266DED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE6B222B-D8E1-46FC-94F4-D48DADAB4AEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB2182D9-16F8-4229-8D6F-56CB8583DBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB2182D9-16F8-4229-8D6F-56CB8583DBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB2182D9-16F8-4229-8D6F-56CB8583DBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB2182D9-16F8-4229-8D6F-56CB8583DBEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDBEA054-E547-4F36-AE7C-F7E5E877D6FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B11381CB-1FC8-4CD1-9960-626ED8C378CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04A1CFC8-76EB-4228-9773-DE32996FD9BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8AF35DE-95B6-4F42-8225-D18EFEB26D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8AF35DE-95B6-4F42-8225-D18EFEB26D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8AF35DE-95B6-4F42-8225-D18EFEB26D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8AF35DE-95B6-4F42-8225-D18EFEB26D46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3728AC41-0680-4E53-A940-031661CDFE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3728AC41-0680-4E53-A940-031661CDFE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3728AC41-0680-4E53-A940-031661CDFE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,10 +46,6 @@ Global
 		{782EA930-BBCE-41C5-BFC7-19260A914239}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{782EA930-BBCE-41C5-BFC7-19260A914239}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{782EA930-BBCE-41C5-BFC7-19260A914239}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5800734D-710B-47D7-9E10-8B52759394E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5800734D-710B-47D7-9E10-8B52759394E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5800734D-710B-47D7-9E10-8B52759394E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5800734D-710B-47D7-9E10-8B52759394E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C65C5859-AE37-4C92-B60D-E08C35EE5F08}.Release|Any CPU.ActiveCfg = Release|Any CPU

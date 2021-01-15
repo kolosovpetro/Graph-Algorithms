@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using FluentAssertions;
+using GraphAlgorithms.Graph.Algorithms;
 using GraphAlgorithms.Graph.Implementations;
 using GraphAlgorithms.Graph.Interfaces;
-using GraphAlgorithms.KahnAlgorithm.Implementation;
 using NUnit.Framework;
 
 namespace GraphAlgorithms.KahnAlgorithm.Test.Tests

@@ -8,4 +8,8 @@
       <ProjectReference Include="..\GraphAlgorithms.Graph\GraphAlgorithms.Graph.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Implementation" />
+    </ItemGroup>
+
 </Project>
