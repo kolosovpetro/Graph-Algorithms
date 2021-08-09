@@ -16,8 +16,6 @@ namespace GraphAlgorithms.Graph.Tests.GraphTests
             var a = graph.AddVertex('A');
             var b = graph.AddVertex('B');
             var c = graph.AddVertex('C');
-            var d = graph.AddVertex('D');
-            var e = graph.AddVertex('E');
 
             var edge = graph.AddEdge(a, b);
             edge.Weight.Should().Be(0);
@@ -28,7 +26,7 @@ namespace GraphAlgorithms.Graph.Tests.GraphTests
             var vertex = new Vertex<char>('F');
             Action act3 = () => graph.AddEdge(vertex, c);
             act3.Should().Throw<InvalidOperationException>()
-                .WithMessage("One or more vertices does not belong to graph.");
+                .WithMessage("One or more vertex does not belong to the graph.");
         }
     }
 }

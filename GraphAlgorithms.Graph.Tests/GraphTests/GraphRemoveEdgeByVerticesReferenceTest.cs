@@ -51,7 +51,7 @@ namespace GraphAlgorithms.Graph.Tests.GraphTests
             var vertex = new Vertex<char>('F');
             Action act2 = () => graph.RemoveEdge(vertex, d);
             act2.Should().Throw<InvalidOperationException>()
-                .WithMessage("One or more vertex does not belong to graph.");
+                .WithMessage("One or more vertex does not belong to the graph.");
         }
     }
 }

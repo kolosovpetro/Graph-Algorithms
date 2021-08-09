@@ -18,10 +18,9 @@ namespace GraphAlgorithms.Graph.Models
         public DistanceModel()
         {
         }
-        
-        
 
-        public override string ToString() => 
+
+        public override string ToString() =>
             $"Vertex: {Vertex} - Distance: {Distance} - Previous: {PreviousVertex}";
     }
 }

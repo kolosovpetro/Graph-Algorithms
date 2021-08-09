@@ -56,15 +56,15 @@ namespace GraphAlgorithms.Graph.Tests.GraphTests
 
             Action act2 = () => graph.RemoveEdge(edge1);
             act2.Should().Throw<InvalidOperationException>()
-                .WithMessage("One or more vertices of edge does not belong to graph");
+                .WithMessage("One or more vertex does not belong to the graph.");
 
             Action act3 = () => graph.RemoveEdge(edge2);
             act3.Should().Throw<InvalidOperationException>()
-                .WithMessage("One or more vertices of edge does not belong to graph");
+                .WithMessage("One or more vertex does not belong to the graph.");
 
             Action act4 = () => graph.RemoveEdge(edge3);
             act4.Should().Throw<InvalidOperationException>()
-                .WithMessage("One or more vertices of edge does not belong to graph");
+                .WithMessage("One or more vertex does not belong to the graph.");
         }
     }
 }
