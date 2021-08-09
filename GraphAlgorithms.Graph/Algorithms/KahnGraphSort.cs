@@ -10,12 +10,20 @@ namespace GraphAlgorithms.Graph.Algorithms
         public static IEnumerable<IVertex<T>> KahnSort(IGraph<T> graph)
         {
             if (!graph.IsAcyclic())
+            {
                 throw new InvalidOperationException("Kahn sort can be performed only on acyclic graph.");
+            }
 
             var queue = new Queue<IVertex<T>>();
-            var startVertices = graph.Vertices.Where(x => x.InDegree() == 0).ToList();
+            
+            var startVertices = graph.Vertices
+                .Where(x => x.InDegree() == 0)
+                .ToList();
+            
             foreach (var vertex in startVertices)
+            {
                 queue.Enqueue(vertex);
+            }
 
             while (queue.Any())
             {
@@ -24,8 +32,10 @@ namespace GraphAlgorithms.Graph.Algorithms
                 var adjacentVertices = vertex.AdjacentVertices();
                 graph.RemoveVertex(vertex);
 
-                foreach (var v in adjacentVertices.Where(v => v.InDegree() == 0)) 
+                foreach (var v in adjacentVertices.Where(v => v.InDegree() == 0))
+                {
                     queue.Enqueue(v);
+                }
             }
         }
     }
