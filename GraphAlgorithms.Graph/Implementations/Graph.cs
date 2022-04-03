@@ -43,36 +43,33 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public List<IVertex<T>> AdjacentVertices(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
-
+            ThrowIfDoesNotContainVertex(vertex);
             return vertex.AdjacentVertices();
         }
-        
+
         /// <summary>
         /// Returns list of all unvisited neighbor vertices of specified vertex.
         /// </summary>
         public List<IVertex<T>> AdjacentUnvisitedVertices(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
-
+            ThrowIfDoesNotContainVertex(vertex);
             return vertex.AdjacentUnvisitedVertices();
         }
 
         /// <summary>
         /// Returns list of all unvisited vertices of a graph
         /// </summary>
-        public List<IVertex<T>> UnvisitedVertices() => Vertices.Where(x => !x.IsVisited).ToList();
+        public List<IVertex<T>> UnvisitedVertices()
+        {
+            return Vertices.Where(x => !x.IsVisited).ToList();
+        }
 
         /// <summary>
         /// Returns a list of all edges in the graph, such that start from particular vertex
         /// </summary>
         public List<IEdge<T>> EdgesToAdjacentVertices(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
-
+            ThrowIfDoesNotContainVertex(vertex);
             return vertex.EdgesToAdjacentVertices();
         }
 
@@ -81,9 +78,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public List<IEdge<T>> EdgesToAdjacentUnvisitedVertices(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
-            
+            ThrowIfDoesNotContainVertex(vertex);
             return vertex.EdgesToAdjacentUnvisitedVertices();
         }
 
@@ -92,9 +87,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public List<IEdge<T>> EdgesContainVertex(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
-
+            ThrowIfDoesNotContainVertex(vertex);
             return Edges.Where(x => x.StartVertex.Equals(vertex) || x.EndVertex.Equals(vertex)).ToList();
         }
 
@@ -104,10 +97,14 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public bool AreAdjacent(IVertex<T> startVertex, IVertex<T> endVertex)
         {
+            ThrowIfDoesNotContainVertices(startVertex, endVertex);
+            return AreAdjacent(startVertex.Data, endVertex.Data);
+        }
+
+        private void ThrowIfDoesNotContainVertices(IVertex<T> startVertex, IVertex<T> endVertex)
+        {
             if (!ContainsVertex(startVertex) || !ContainsVertex(endVertex))
                 throw new InvalidOperationException("One or more vertex does not belong to the graph.");
-
-            return AreAdjacent(startVertex.Data, endVertex.Data);
         }
 
         /// <summary>
@@ -115,12 +112,19 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public IVertex<T> AddVertex(T data)
         {
-            if (ContainsVertex(data))
-                throw new InvalidOperationException("Vertex with same data is already in graph.");
+            ThrowIfContainsData(data);
 
             var vertex = new Vertex<T>(data, this);
             Vertices.Add(vertex);
             return vertex;
+        }
+
+        private void ThrowIfContainsData(T data)
+        {
+            if (ContainsVertex(data))
+            {
+                throw new InvalidOperationException("Vertex with same data is already in graph.");
+            }
         }
 
         /// <summary>
@@ -129,8 +133,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public IEdge<T> AddEdge(IVertex<T> startVertex, IVertex<T> endVertex)
         {
-            if (!ContainsVertex(startVertex) || !ContainsVertex(endVertex))
-                throw new InvalidOperationException("One or more vertices does not belong to graph.");
+            ThrowIfDoesNotContainVertices(startVertex, endVertex);
 
             var edge = new Edge<T>(startVertex, endVertex, this);
             Edges.Add(edge);
@@ -143,8 +146,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public IEdge<T> AddEdge(IVertex<T> startVertex, IVertex<T> endVertex, int weight)
         {
-            if (!ContainsVertex(startVertex) || !ContainsVertex(endVertex))
-                throw new InvalidOperationException("One or more vertices does not belong to graph.");
+            ThrowIfDoesNotContainVertices(startVertex, endVertex);
 
             var edge = new Edge<T>(startVertex, endVertex, weight, this);
             Edges.Add(edge);
@@ -156,8 +158,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public void RemoveVertex(T data)
         {
-            if (!ContainsVertex(data))
-                throw new InvalidOperationException("There is no any vertex with such data.");
+            ThrowIfDoesNotContainData(data);
 
             var vertex = Vertices.First(x => x.Data.Equals(data));
             var connectedEdges = EdgesContainVertex(vertex);
@@ -167,13 +168,18 @@ namespace GraphAlgorithms.Graph.Implementations
             vertex.CurrentGraph = null;
         }
 
+        private void ThrowIfDoesNotContainData(T data)
+        {
+            if (!ContainsVertex(data))
+                throw new InvalidOperationException("There is no any vertex with such data.");
+        }
+
         /// <summary>
         /// Removes vertex from the graph by reference.
         /// </summary>
         public void RemoveVertex(IVertex<T> vertex)
         {
-            if (!ContainsVertex(vertex))
-                throw new InvalidOperationException("Vertex does not belong to the graph.");
+            ThrowIfDoesNotContainVertex(vertex);
 
             var connectedEdges = EdgesContainVertex(vertex);
 
@@ -187,13 +193,14 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public void RemoveEdge(IVertex<T> startVertex, IVertex<T> endVertex)
         {
-            if (!ContainsVertex(startVertex) || !ContainsVertex(endVertex))
-                throw new InvalidOperationException("One or more vertex does not belong to graph.");
+            ThrowIfDoesNotContainVertices(startVertex, endVertex);
 
             if (!AreAdjacent(startVertex, endVertex))
+            {
                 throw new InvalidOperationException("There is no such edge in the graph.");
+            }
 
-            var edge = Edges.First(x => x.StartVertex.Equals(startVertex) 
+            var edge = Edges.First(x => x.StartVertex.Equals(startVertex)
                                         && x.EndVertex.Equals(endVertex));
             Edges.Remove(edge);
 
@@ -205,11 +212,12 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public void RemoveEdge(IEdge<T> edge)
         {
-            if (!ContainsVertex(edge.StartVertex) || !ContainsVertex(edge.EndVertex))
-                throw new InvalidOperationException("One or more vertices of edge does not belong to graph");
+            ThrowIfDoesNotContainVertices(edge.StartVertex, edge.EndVertex);
 
             if (!ContainsEdge(edge))
+            {
                 throw new InvalidOperationException("Edge does not belong to the graph.");
+            }
 
             edge.CurrentGraph = null;
             Edges.Remove(edge);
@@ -218,17 +226,26 @@ namespace GraphAlgorithms.Graph.Implementations
         /// <summary>
         /// Checks whenever graph contains vertex with specified data.
         /// </summary>
-        public bool ContainsVertex(T data) => Vertices.Any(x => x.Data.Equals(data));
+        public bool ContainsVertex(T data)
+        {
+            return Vertices.Any(x => x.Data.Equals(data));
+        }
 
         /// <summary>
         /// Checks whenever graph contains specified vertex.
         /// </summary>
-        public bool ContainsVertex(IVertex<T> vertex) => vertex.CurrentGraph == this;
+        public bool ContainsVertex(IVertex<T> vertex)
+        {
+            return vertex.CurrentGraph == this;
+        }
 
         /// <summary>
         /// Checks whenever graph contains specified edge.
         /// </summary>
-        public bool ContainsEdge(IEdge<T> edge) => edge.CurrentGraph == this;
+        public bool ContainsEdge(IEdge<T> edge)
+        {
+            return edge.CurrentGraph == this;
+        }
 
         /// <summary>
         /// Indicates whenever current graph has Eulerian path.
@@ -236,13 +253,17 @@ namespace GraphAlgorithms.Graph.Implementations
         public bool HasEulerianPath()
         {
             var outInDifferenceVertices = Vertices
-                .Where(x => x.OutDegree() - x.InDegree() == 1).ToList();
+                .Where(x => x.OutDegree() - x.InDegree() == 1)
+                .ToList();
 
             var inOutDifferenceVertices = Vertices
-                .Where(x => x.InDegree() - x.OutDegree() == 1).ToList();
+                .Where(x => x.InDegree() - x.OutDegree() == 1)
+                .ToList();
 
             if (inOutDifferenceVertices.Count > 1 || outInDifferenceVertices.Count > 1)
+            {
                 return false;
+            }
 
             var otherVertices = Vertices
                 .Except(outInDifferenceVertices)
@@ -274,8 +295,7 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public bool AreAdjacent(T startData, T endData)
         {
-            return Edges.Any(x => x.StartVertex.Data.Equals(startData)
-                                  && x.EndVertex.Data.Equals(endData));
+            return Edges.Any(x => x.StartVertex.Data.Equals(startData) && x.EndVertex.Data.Equals(endData));
         }
 
         /// <summary>
@@ -283,7 +303,10 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public void Reset()
         {
-            foreach (var vertex in Vertices) vertex.Reset();
+            foreach (var vertex in Vertices)
+            {
+                vertex.Reset();
+            }
         }
 
         /// <summary>
@@ -292,7 +315,18 @@ namespace GraphAlgorithms.Graph.Implementations
         /// </summary>
         public void ClearEdges()
         {
-            while (Edges.Any()) RemoveEdge(Edges.First());
+            while (Edges.Any())
+            {
+                RemoveEdge(Edges.First());
+            }
+        }
+
+        private void ThrowIfDoesNotContainVertex(IVertex<T> vertex)
+        {
+            if (!ContainsVertex(vertex))
+            {
+                throw new InvalidOperationException("Vertex does not belong to the graph.");
+            }
         }
     }
 }

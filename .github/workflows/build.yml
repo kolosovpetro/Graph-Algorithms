@@ -1,0 +1,37 @@
+﻿name: Build
+
+on:
+  push:
+    branches:
+      - test-of-fckn-cursed-shit-let-it-die-and-burn-in-hell
+      - develop
+      - master
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore /p:ContinuousIntegrationBuild=true
+
+      - name: Run automated unit and integration tests
+        run: dotnet test GraphAlgorithms.Graph.Tests/GraphAlgorithms.Graph.Tests.csproj /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
+
+      - name: Publish coverage report to coveralls.io
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          path-to-lcov: GraphAlgorithms.Graph.Tests/TestResults/coverage.info
