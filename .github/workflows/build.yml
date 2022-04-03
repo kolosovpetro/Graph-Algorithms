@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - test-of-fckn-cursed-shit-let-it-die-and-burn-in-hell
+      - develop
+      - master
   pull_request:
     branches:
       - develop
+      - master
 
 jobs:
   build:
